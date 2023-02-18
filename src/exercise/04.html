@@ -9,22 +9,27 @@
   <script type="text/babel">
     // 🐨 Make a function called `message` which returns the JSX we want to share
 
-    function message () {
-      return (
-        
-      <div className="container">
-        <div className="message">Hello World what is up here?</div>
-        <div className="message">Goodbye World</div>
-      </div>
-)
+    function message ({children}) {
+      
+        return <div className="message">{children}</div>
+
     }
+
+
+    
 
     // 🐨 use that function in place of the divs below with:
     // 💰 {message({children: 'Hello World'})} {message({children: 'Goodbye World'})}
     const element = ( 
-      message()
-          )
-
+      
+        <div className="container">
+          {message({children:"Hello World"})}
+          {message({children:"Goodbye World"})}
+        </div>
+        
+      
+      )
+    
 
     
 

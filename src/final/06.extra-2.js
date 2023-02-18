@@ -10,6 +10,8 @@ function UsernameForm({onSubmitUsername}) {
   function handleSubmit(event) {
     event.preventDefault()
     onSubmitUsername(event.target.elements.usernameInput.value)
+    console.log("event", event.target.elements)
+   
   }
 
   function handleChange(event) {
@@ -21,13 +23,14 @@ function UsernameForm({onSubmitUsername}) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="usernameInput">Username:</label>
+        <label htmlFor="usernameInput"> Username:</label>
         <input id="usernameInput" type="text" onChange={handleChange} />
       </div>
       <div role="alert" style={{color: 'red'}}>
         {error}
       </div>
       <button disabled={Boolean(error)} type="submit">
+        
         Submit
       </button>
     </form>
@@ -39,6 +42,7 @@ function App() {
   return (
     <div style={{minWidth: 400}}>
       <UsernameForm onSubmitUsername={onSubmitUsername} />
+      {/* he is just passing this function here as a prop with the name onSubmitUsername to use it inside the component. */}
     </div>
   )
 }
