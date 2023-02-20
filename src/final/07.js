@@ -25,13 +25,13 @@ function App() {
   return (
     <div className="keys">
       <button disabled={items.length >= allItems.length} onClick={addItem}>
-        add item
+        Add item
       </button>
       <ul>
         {items.map(item => (
           <li key={item.id}>
-            <button onClick={() => removeItem(item)}>remove</button>{' '}
-            <label htmlFor={`${item.id}-input`}>{item.value}</label>{' '}
+            <button onClick={() => removeItem(item)}>remove</button>
+            <label htmlFor={`${item.id}-input`}>{item.value}</label>
             <input id={`${item.id}-input`} defaultValue={item.value} />
           </li>
         ))}
